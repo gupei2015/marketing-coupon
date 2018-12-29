@@ -1,0 +1,29 @@
+flyway:
+#  locations: classpath:db/migration,db-dev/migration
+  locations: classpath:db/migration
+  baseline-on-migrate: true
+
+
+# not working, moved to jenkin config
+spring:
+  application:
+    name: marketing-rds
+  datasource:
+    url: jdbc:mysql://localhost:3306/lk-p-marketing?characterEncoding=utf-8&autoReconnect=true&useSSL=false
+    username: root
+    password: root123
+
+   #数据库连接池配置
+    max-active: 200
+    max-idle: 100
+    min-idle: 50
+    initial-size: 20
+    test-on-borrow: false
+    test-on-return: false
+    test-while-idle: true
+    validation-query: select 1
+    #每10分钟收集空闲连接，单位毫秒
+    time-between-eviction-runs-millis: 600000
+    #连接的最大空闲时间，单位毫秒，60分钟
+    min-evictable-idle-time-millis: 3600000
+    max-wait: 60000

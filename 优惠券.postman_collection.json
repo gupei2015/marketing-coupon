@@ -1,0 +1,1450 @@
+{
+	"info": {
+		"_postman_id": "f98d8a9c-1a30-42bc-aff0-aec6560318cf",
+		"name": "优惠券",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "领券",
+			"item": [
+				{
+					"name": "新用户注册领取积分",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"couponReceiveReqDto\":{\n\t\t\"couponId\": 27,\n\t\t\"activityId\": 39,\n\t\t\"userId\": \"3\",\n\t\t\"requestQuantity\": 100,\n\t\t\"sceneDesc\": \"新用户注册\",\n\t\t\"orderDto\": {},\n\t\t\"orderItemDto\": {}\n\t},\n\t\"memberDto\":{\n\t\t\"userId\": \"3\",\n\t\t\"userCode\": \"LK-User03\",\n\t\t\"userName\": \"tomcat\",\n\t\t\"level\": 1,\n\t\t\"age\": 18,\n\t\t\"gender\": 1\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://{{host}}:{{port}}/couponReceive/produceCoupon",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"couponReceive",
+								"produceCoupon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "领取2张满300元商品排他9折券",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"couponReceiveReqDto\":{\n\t\t\"couponId\": 13,\n\t\t\"activityId\": 25,\n\t\t\"userId\": \"3\",\n\t\t\"requestQuantity\": 2,\n\t\t\"sceneDesc\": \"活动领取\",\n\t\t\"orderDto\": {},\n\t\t\"orderItemDto\": {}\n\t},\n\t\"memberDto\":{\n\t\t\"userId\": \"3\",\n\t\t\"userCode\": \"LK-User03\",\n\t\t\"userName\": \"wzh\",\n\t\t\"level\": 1,\n\t\t\"age\": 18,\n\t\t\"gender\": 1\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://{{host}}:{{port}}/couponReceive/produceCoupon",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"couponReceive",
+								"produceCoupon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "领取2张满300元商品可并存9折券",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"couponReceiveReqDto\":{\n\t\t\"couponId\": 14,\n\t\t\"activityId\": 26,\n\t\t\"userId\": \"3\",\n\t\t\"requestQuantity\": 2,\n\t\t\"sceneDesc\": \"活动领取\",\n\t\t\"orderDto\": {},\n\t\t\"orderItemDto\": {}\n\t},\n\t\"memberDto\":{\n\t\t\"userId\": \"3\",\n\t\t\"userCode\": \"LK-User03\",\n\t\t\"userName\": \"wzh\",\n\t\t\"level\": 2,\n\t\t\"age\": 18,\n\t\t\"gender\": 1\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://{{host}}:{{port}}/couponReceive/produceCoupon",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"couponReceive",
+								"produceCoupon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "领取1张下单满500元排他8折券",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"couponReceiveReqDto\":{\n\t\t\"couponId\": 15,\n\t\t\"activityId\": 27,\n\t\t\"userId\": \"3\",\n\t\t\"requestQuantity\": 1,\n\t\t\"sceneDesc\": \"活动领取\",\n\t\t\"orderDto\": {},\n\t\t\"orderItemDto\": {}\n\t},\n\t\"memberDto\":{\n\t\t\"userId\": \"3\",\n\t\t\"userCode\": \"LK-User03\",\n\t\t\"userName\": \"wzh\",\n\t\t\"level\": 1,\n\t\t\"age\": 18,\n\t\t\"gender\": 1\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://{{host}}:{{port}}/couponReceive/produceCoupon",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"couponReceive",
+								"produceCoupon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "领取1张下单满500元可并存8折券",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"couponReceiveReqDto\":{\n\t\t\"couponId\": 16,\n\t\t\"activityId\": 28,\n\t\t\"requestQuantity\": 5,\n\t\t\"sceneDesc\": \"活动领取\",\n\t\t\"orderDto\": {},\n\t\t\"orderItemDto\": {}\n\t},\n\t\"memberDto\":{\n\t\t\"userId\": \"3\",\n\t\t\"userCode\": \"LK-User03\",\n\t\t\"userName\": \"tomcat\",\n\t\t\"level\": 2,\n\t\t\"age\": 18,\n\t\t\"gender\": 1\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://{{host}}:{{port}}/couponReceive/produceCoupon",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"couponReceive",
+								"produceCoupon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "领取1张下单满50减5排他券",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"couponReceiveReqDto\":{\n\t\t\"couponId\": 17,\n\t\t\"activityId\": 29,\n\t\t\"userId\": \"3\",\n\t\t\"requestQuantity\": 1,\n\t\t\"sceneDesc\": \"活动领取\",\n\t\t\"orderDto\": {},\n\t\t\"orderItemDto\": {}\n\t},\n\t\"memberDto\":{\n\t\t\"userId\": \"3\",\n\t\t\"userCode\": \"LK-User03\",\n\t\t\"userName\": \"wzh\",\n\t\t\"level\": 1,\n\t\t\"age\": 18,\n\t\t\"gender\": 1\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://{{host}}:{{port}}/couponReceive/produceCoupon",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"couponReceive",
+								"produceCoupon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "领取2张下单满100减10并存券",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"couponReceiveReqDto\":{\n\t\t\"couponId\": 18,\n\t\t\"activityId\": 30,\n\t\t\"userId\": \"3\",\n\t\t\"requestQuantity\": 2,\n\t\t\"sceneDesc\": \"活动领取\",\n\t\t\"orderDto\": {},\n\t\t\"orderItemDto\": {}\n\t},\n\t\"memberDto\":{\n\t\t\"userId\": \"3\",\n\t\t\"userCode\": \"LK-User03\",\n\t\t\"userName\": \"wzh\",\n\t\t\"level\": 1,\n\t\t\"age\": 18,\n\t\t\"gender\": 1\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://{{host}}:{{port}}/couponReceive/produceCoupon",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"couponReceive",
+								"produceCoupon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "领取5张下单满500减20并存券",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"couponReceiveReqDto\":{\n\t\t\"couponId\": 19,\n\t\t\"activityId\": 31,\n\t\t\"userId\": \"3\",\n\t\t\"requestQuantity\": 5,\n\t\t\"sceneDesc\": \"活动领取\",\n\t\t\"orderDto\": {},\n\t\t\"orderItemDto\": {}\n\t},\n\t\"memberDto\":{\n\t\t\"userId\": \"3\",\n\t\t\"userCode\": \"LK-User03\",\n\t\t\"userName\": \"wzh\",\n\t\t\"level\": 2,\n\t\t\"age\": 18,\n\t\t\"gender\": 1\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://{{host}}:{{port}}/couponReceive/produceCoupon",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"couponReceive",
+								"produceCoupon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "领取1张商品满200减10排他券",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"couponReceiveReqDto\":{\n\t\t\"couponId\": 20,\n\t\t\"activityId\": 32,\n\t\t\"userId\": \"3\",\n\t\t\"requestQuantity\": 5,\n\t\t\"sceneDesc\": \"活动领取\",\n\t\t\"orderDto\": {},\n\t\t\"orderItemDto\": {}\n\t},\n\t\"memberDto\":{\n\t\t\"userId\": \"3\",\n\t\t\"userCode\": \"LK-User03\",\n\t\t\"userName\": \"tomcat\",\n\t\t\"level\": 1,\n\t\t\"age\": 18,\n\t\t\"gender\": 1\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://{{host}}:{{port}}/couponReceive/produceCoupon",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"couponReceive",
+								"produceCoupon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "领取1张商品满200减10并存券",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"couponReceiveReqDto\":{\n\t\t\"couponId\": 21,\n\t\t\"activityId\": 33,\n\t\t\"userId\": \"3\",\n\t\t\"requestQuantity\": 5,\n\t\t\"sceneDesc\": \"活动领取\",\n\t\t\"orderDto\": {},\n\t\t\"orderItemDto\": {}\n\t},\n\t\"memberDto\":{\n\t\t\"userId\": \"3\",\n\t\t\"userCode\": \"LK-User03\",\n\t\t\"userName\": \"tomcat\",\n\t\t\"level\": 2,\n\t\t\"age\": 18,\n\t\t\"gender\": 1\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://{{host}}:{{port}}/couponReceive/produceCoupon",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"couponReceive",
+								"produceCoupon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "领取1张商品一口价20元券",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"couponReceiveReqDto\":{\n\t\t\"couponId\": 22,\n\t\t\"activityId\": 34,\n\t\t\"userId\": \"3\",\n\t\t\"requestQuantity\": 1,\n\t\t\"sceneDesc\": \"活动领取\",\n\t\t\"orderDto\": {},\n\t\t\"orderItemDto\": {}\n\t},\n\t\"memberDto\":{\n\t\t\"userId\": \"3\",\n\t\t\"userCode\": \"LK-User03\",\n\t\t\"userName\": \"wzh\",\n\t\t\"level\": 2,\n\t\t\"age\": 18,\n\t\t\"gender\": 1\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://{{host}}:{{port}}/couponReceive/produceCoupon",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"couponReceive",
+								"produceCoupon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "领取5张商品2元抵价券",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"couponReceiveReqDto\":{\n\t\t\"couponId\": 23,\n\t\t\"activityId\": 35,\n\t\t\"userId\": \"3\",\n\t\t\"requestQuantity\": 5,\n\t\t\"sceneDesc\": \"活动领取\",\n\t\t\"orderDto\": {},\n\t\t\"orderItemDto\": {}\n\t},\n\t\"memberDto\":{\n\t\t\"userId\": \"3\",\n\t\t\"userCode\": \"LK-User03\",\n\t\t\"userName\": \"tomcat\",\n\t\t\"level\": 1,\n\t\t\"age\": 18,\n\t\t\"gender\": 1\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://{{host}}:{{port}}/couponReceive/produceCoupon",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"couponReceive",
+								"produceCoupon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "领取3张下单5元抵价券",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"couponReceiveReqDto\":{\n\t\t\"couponId\": 24,\n\t\t\"activityId\": 36,\n\t\t\"userId\": \"3\",\n\t\t\"requestQuantity\": 3,\n\t\t\"sceneDesc\": \"活动领取\",\n\t\t\"orderDto\": {},\n\t\t\"orderItemDto\": {}\n\t},\n\t\"memberDto\":{\n\t\t\"userId\": \"3\",\n\t\t\"userCode\": \"LK-User03\",\n\t\t\"userName\": \"wzh\",\n\t\t\"level\": 2,\n\t\t\"age\": 18,\n\t\t\"gender\": 1\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://{{host}}:{{port}}/couponReceive/produceCoupon",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"couponReceive",
+								"produceCoupon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "领取5张满5件商品打8折排他优惠券",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"couponReceiveReqDto\":{\n\t\t\"couponId\": 25,\n\t\t\"activityId\": 37,\n\t\t\"userId\": \"3\",\n\t\t\"requestQuantity\": 5,\n\t\t\"sceneDesc\": \"活动领取\",\n\t\t\"orderDto\": {},\n\t\t\"orderItemDto\": {}\n\t},\n\t\"memberDto\":{\n\t\t\"userId\": \"3\",\n\t\t\"userCode\": \"LK-User03\",\n\t\t\"userName\": \"wzh\",\n\t\t\"level\": 1,\n\t\t\"age\": 18,\n\t\t\"gender\": 1\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://{{host}}:{{port}}/couponReceive/produceCoupon",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"couponReceive",
+								"produceCoupon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "领取5张买满5件商品减30元并存券",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"couponReceiveReqDto\":{\n\t\t\"couponId\": 26,\n\t\t\"activityId\": 38,\n\t\t\"userId\": \"3\",\n\t\t\"requestQuantity\": 5,\n\t\t\"sceneDesc\": \"活动领取\",\n\t\t\"orderDto\": {},\n\t\t\"orderItemDto\": {}\n\t},\n\t\"memberDto\":{\n\t\t\"userId\": \"3\",\n\t\t\"userCode\": \"LK-User03\",\n\t\t\"userName\": \"tomcat\",\n\t\t\"level\": 1,\n\t\t\"age\": 18,\n\t\t\"gender\": 1\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://{{host}}:{{port}}/couponReceive/produceCoupon",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"couponReceive",
+								"produceCoupon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "领取5积分",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"couponReceiveReqDto\":{\n\t\t\"couponId\": 27,\n\t\t\"activityId\": 40,\n\t\t\"userId\": \"3\",\n\t\t\"requestQuantity\": 5,\n\t\t\"sceneDesc\": \"活动领取\",\n\t\t\"orderDto\": {},\n\t\t\"orderItemDto\": {}\n\t},\n\t\"memberDto\":{\n\t\t\"userId\": \"3\",\n\t\t\"userCode\": \"LK-User03\",\n\t\t\"userName\": \"tomcat\",\n\t\t\"level\": 1,\n\t\t\"age\": 18,\n\t\t\"gender\": 1\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://{{host}}:{{port}}/couponReceive/produceCoupon",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"couponReceive",
+								"produceCoupon"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "用券",
+			"item": [
+				{
+					"name": "level是2的userId为3的用户购买5件A00001商品时的可用优惠券列表",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\r\n\t\t\"memberDto\": {\r\n\t\t\t\"userId\": \"3\",\r\n\t\t\t\"userCode\": \"LK-User03\",\r\n\t\t\t\"userName\": \"tomcat\",\r\n\t\t\t\"level\": 2,\r\n\t\t\t\"age\": 18,\r\n\t\t\t\"gender\": 1\r\n\t\t},\r\n\t\t\"orderItemDto\": {\r\n\t\t\t\"skuId\": \"A00001\",\r\n\t\t\t\"shopId\": \"s00001\",\r\n\t\t\t\"shopName\": \"天猫旗舰店\",\r\n\t\t\t\"skuCategory\": \"LKSKCAT01\",\r\n\t\t\t\"goodsQuantity\": 5,\r\n\t\t\t\"totalGoodsAmount\": 500.00\r\n\t\t}\r\n\r\n}"
+						},
+						"url": {
+							"raw": "http://{{host}}:{{port}}/couponConsume/item/available/query",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"couponConsume",
+								"item",
+								"available",
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userId为3的用户购买1件A00001商品时的可用优惠券列表",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\r\n\t\t\"memberDto\": {\r\n\t\t\t\"userId\": \"3\",\r\n\t\t\t\"userCode\": \"LK-User03\",\r\n\t\t\t\"userName\": \"tomcat\",\r\n\t\t\t\"level\": 1,\r\n\t\t\t\"age\": 18,\r\n\t\t\t\"gender\": 1\r\n\t\t},\r\n\t\t\"orderItemDto\": {\r\n\t\t\t\"skuId\": \"A00001\",\r\n\t\t\t\"shopId\": \"s00001\",\r\n\t\t\t\"shopName\": \"天猫旗舰店\",\r\n\t\t\t\"skuCategory\": \"LKSKCAT01\",\r\n\t\t\t\"goodsQuantity\": 1,\r\n\t\t\t\"totalGoodsAmount\": 100.00\r\n\t\t}\r\n\r\n}"
+						},
+						"url": {
+							"raw": "http://{{host}}:{{port}}/couponConsume/item/available/query",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"couponConsume",
+								"item",
+								"available",
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "level是2的userId为3的用户下单满500元时的可用优惠券列表",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n\t\"memberDto\": {\r\n\t\t\"userId\": \"3\",\r\n\t\t\"userCode\": \"LK-User03\",\r\n\t\t\"userName\": \"tomcat\",\r\n\t\t\"level\": 2,\r\n\t\t\"age\": 18,\r\n\t\t\"gender\": 1\r\n\t},\r\n\t\"orderDto\": {\r\n\t\t\"orderId\": \"O00001\",\r\n\t\t\"orderNo\": \"No0001\",\r\n\t\t\"orderDate\": \"2018-12-06\",\r\n\t\t\"totalOrderAmount\": 500.00,\r\n\t\t\"orderItemList\": []\r\n\t}\r\n\r\n}"
+						},
+						"url": {
+							"raw": "http://{{host}}:{{port}}/couponConsume/order/available/query",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"couponConsume",
+								"order",
+								"available",
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userId为3的用户下单100元时的可用优惠券列表",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n\t\"memberDto\": {\r\n\t\t\"userId\": \"3\",\r\n\t\t\"userCode\": \"LK-User03\",\r\n\t\t\"userName\": \"tomcat\",\r\n\t\t\"level\": 1,\r\n\t\t\"age\": 18,\r\n\t\t\"gender\": 1\r\n\t},\r\n\t\"orderDto\": {\r\n\t\t\"orderId\": \"O00001\",\r\n\t\t\"orderNo\": \"No0001\",\r\n\t\t\"orderDate\": \"2018-12-06\",\r\n\t\t\"totalOrderAmount\": 100.00,\r\n\t\t\"orderItemList\": []\r\n\t}\r\n\r\n}"
+						},
+						"url": {
+							"raw": "http://{{host}}:{{port}}/couponConsume/order/available/query",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"couponConsume",
+								"order",
+								"available",
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userId为3的用户购买两种商品只使用订单优惠券",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"memberDto\": {\n    \"userId\": \"3\",\n    \"userCode\": \"LK-User03\",\n    \"userName\": \"tomcat\",\n    \"level\": 1,\n    \"expValue\": 67066553,\n    \"age\": 18,\n    \"gender\": 1,\n    \"phoneNumber\": \"1388888\"\n  },\n  \"orderDto\": {\n    \"orderId\": \"001\",\n    \"orderNo\": \"12358\",\n    \"totalOrderAmount\": 200.00,\n    \"payOrderAmount\": 200.00,\n    \"orderDate\": \"2018-12-09T11:38:52.684Z\",\n    \"orderItemList\": [\n      {\n        \"orderItemId\": \"001\",\n        \"skuId\": \"A00001\",\n        \"shopId\": \"S00001\",\n        \"shopName\": \"阿玛尼天猫店\",\n        \"goodsQuantity\": 1,\n        \"goodsSalePrice\": 100,\n        \"totalGoodsAmount\": 100.00,\n        \"payGoodsAmount\": 100.00,\n        \"useCoupons\": [\n          \n        ]\n      },\n      {\n        \"orderItemId\": \"002\",\n        \"skuId\": \"A00009\",\n        \"shopId\": \"S00001\",\n        \"shopName\": \"阿玛尼天猫店\",\n        \"goodsQuantity\": 1,\n        \"goodsSalePrice\": 100,\n        \"totalGoodsAmount\": 100.00,\n        \"payGoodsAmount\": 100.00,\n        \"useCoupons\": [\n          \n        ]\n      }\n    ],\n    \"useCoupons\": [\n    \t{\n            \"couponId\": 18,\n            \"couponQuantity\": 2\n        }\n    ]\n  }\n}"
+						},
+						"url": {
+							"raw": "http://{{host}}:{{port}}/couponConsume/consume",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"couponConsume",
+								"consume"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userId为3的用户购买两种商品全部使用商品优惠券和订单优惠券",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"memberDto\": {\n    \"userId\": \"3\",\n    \"userCode\": \"LK-User03\",\n    \"userName\": \"tomcat\",\n    \"level\": 2,\n    \"expValue\": 670665403,\n    \"age\": 18,\n    \"gender\": 1,\n    \"phoneNumber\": \"1123588\"\n  },\n  \"orderDto\": {\n    \"orderId\": \"011\",\n    \"orderNo\": \"14590\",\n    \"totalOrderAmount\": 1000.00,\n    \"orderDate\": \"2018-12-11T11:19:52.684Z\",\n    \"orderItemList\": [\n      {\n        \"orderItemId\": \"003\",\n        \"skuId\": \"A00001\",\n        \"shopId\": \"S00001\",\n        \"shopName\": \"阿玛尼天猫店\",\n        \"goodsQuantity\": 10,\n        \"goodsSalePrice\": 50,\n        \"totalGoodsAmount\": 500.00,\n        \"payGoodsAmount\": 430.00,\n        \"useCoupons\": [\n          {\n            \"couponId\": 23,\n            \"couponQuantity\": 5\n          },\n          {\n            \"couponId\": 26,\n            \"couponQuantity\": 2\n          }\n        ]\n      },\n      {\n        \"orderItemId\": \"004\",\n        \"skuId\": \"946750\",\n        \"shopId\": \"S00001\",\n        \"shopName\": \"阿玛尼天猫店\",\n        \"goodsQuantity\": 2,\n        \"goodsSalePrice\": 250.00,\n        \"totalGoodsAmount\": 500.00,\n        \"payGoodsAmount\": 440.00,\n        \"useCoupons\": [\n          {\n            \"couponId\": 14,\n            \"couponQuantity\": 1\n          },\n          {\n            \"couponId\": 21,\n            \"couponQuantity\": 1\n          }\n        ]\n      }\n    ],\n    \"useCoupons\": [\n    \t{\n            \"couponId\": 16,\n            \"couponQuantity\": 1\n        },\n        {\n            \"couponId\": 27,\n            \"couponQuantity\": 100\n        }\n    ]\n  }\n}"
+						},
+						"url": {
+							"raw": "http://{{host}}:{{port}}/couponConsume/consume",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"couponConsume",
+								"consume"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "结算",
+			"item": [
+				{
+					"name": "userId为3的用户购买两种商品全部使用商品优惠券和订单优惠券",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"memberDto\": {\n    \"userId\": \"3\",\n    \"userCode\": \"LK-User03\",\n    \"userName\": \"tomcat\",\n    \"level\": 2,\n    \"expValue\": 670665403,\n    \"age\": 18,\n    \"gender\": 1,\n    \"phoneNumber\": \"14875876988\"\n  },\n  \"orderDto\": {\n    \"orderId\": \"001\",\n    \"orderNo\": \"12358\",\n    \"totalOrderAmount\": 1000.00,\n    \"payOrderAmount\": 870.00,\n    \"orderDate\": \"2018-12-09T11:17:52.684Z\",\n    \"orderItemList\": [\n      {\n        \"orderItemId\": \"001\",\n        \"skuId\": \"A00001\",\n        \"shopId\": \"S00001\",\n        \"shopName\": \"阿玛尼天猫店\",\n        \"goodsQuantity\": 10,\n        \"goodsSalePrice\": 50,\n        \"totalGoodsAmount\": 500.00,\n        \"payGoodsAmount\": 430.00,\n        \"useCoupons\": [\n          {\n            \"couponId\": 23,\n            \"couponQuantity\": 5\n          },\n          {\n            \"couponId\": 26,\n            \"couponQuantity\": 2\n          }\n        ]\n      },\n      {\n        \"orderItemId\": \"002\",\n        \"skuId\": \"946750\",\n        \"shopId\": \"S00001\",\n        \"shopName\": \"阿玛尼天猫店\",\n        \"goodsQuantity\": 2,\n        \"goodsSalePrice\": 250.00,\n        \"totalGoodsAmount\": 500.00,\n        \"payGoodsAmount\": 440.00,\n        \"useCoupons\": [\n          {\n            \"couponId\": 14,\n            \"couponQuantity\": 1\n          },\n          {\n            \"couponId\": 21,\n            \"couponQuantity\": 1\n          }\n        ]\n      }\n    ],\n    \"useCoupons\": [\n    \t{\n            \"couponId\": 16,\n            \"couponQuantity\": 1\n        },\n        {\n            \"couponId\": 27,\n            \"couponQuantity\": 100\n        }\n    ]\n  }\n}"
+						},
+						"url": {
+							"raw": "http://{{host}}:{{port}}/couponSettle/order/settlement",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"couponSettle",
+								"order",
+								"settlement"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "在可用优惠券列表中选择商品并存券返回的优惠金额及优惠券列表",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"couponReduceTargetFlag\": 2,\r\n  \"skuId\": \"A00001\",\r\n  \"goodsSalePrice\": 100.00,\r\n  \"shopId\": \"S00001\",\r\n  \"totalAmount\": 500.00,\r\n  \"dynamicCalcSelectedCouponList\": [\r\n    {\r\n      \"couponId\": 20,\r\n      \"couponSelectQuantity\": 0,\r\n      \"couponAmount\": 10,\r\n      \"status\": 0\r\n    },\r\n    {\r\n      \"couponId\": 21,\r\n      \"couponSelectQuantity\": 0,\r\n      \"couponAmount\": 10,\r\n      \"status\": 0\r\n    },\r\n    {\r\n      \"couponId\": 22,\r\n      \"couponSelectQuantity\": 0,\r\n      \"couponAmount\": 0,\r\n      \"status\": 0\r\n    },\r\n    {\r\n      \"couponId\": 23,\r\n      \"couponSelectQuantity\": 0,\r\n      \"couponAmount\": 2,\r\n      \"status\": 0\r\n    },\r\n    {\r\n      \"couponId\": 25,\r\n      \"couponSelectQuantity\": 0,\r\n      \"couponAmount\": 0.8,\r\n      \"status\": 0\r\n    },{\r\n      \"couponId\": 26,\r\n      \"couponSelectQuantity\": 0,\r\n      \"couponAmount\": 30,\r\n      \"status\": 0\r\n    },\r\n    {\r\n      \"couponId\": 13,\r\n      \"couponSelectQuantity\": 0,\r\n      \"couponAmount\": 0.9,\r\n      \"status\": 0\r\n    },\r\n    {\r\n      \"couponId\": 14,\r\n      \"couponSelectQuantity\": 0,\r\n      \"couponAmount\": 0.9,\r\n      \"status\": 0\r\n    }\r\n  ]\r\n}"
+						},
+						"url": {
+							"raw": "http://{{host}}:{{port}}/couponSettle/dynamicSelect",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"couponSettle",
+								"dynamicSelect"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "在可用优惠券列表中选择商品排他券返回的优惠金额及优惠券列表",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"couponReduceTargetFlag\": 2,\r\n  \"skuId\": \"A00001\",\r\n  \"goodsSalePrice\": 100.00,\r\n  \"shopId\": \"S00001\",\r\n  \"totalAmount\": 1000.00,\r\n  \"dynamicCalcSelectedCouponList\": [\r\n    {\r\n      \"couponId\": 20,\r\n      \"couponSelectQuantity\": 0,\r\n      \"couponAmount\": 10,\r\n      \"status\": 0\r\n    },\r\n    {\r\n      \"couponId\": 21,\r\n      \"couponSelectQuantity\": 0,\r\n      \"couponAmount\": 10,\r\n      \"status\": 0\r\n    },\r\n    {\r\n      \"couponId\": 22,\r\n      \"couponSelectQuantity\": 0,\r\n      \"couponAmount\": 0,\r\n      \"status\": 0\r\n    },\r\n    {\r\n      \"couponId\": 23,\r\n      \"couponSelectQuantity\": 0,\r\n      \"couponAmount\": 2,\r\n      \"status\": 0\r\n    },\r\n    {\r\n      \"couponId\": 25,\r\n      \"couponSelectQuantity\": 2,\r\n      \"couponAmount\": 0.8,\r\n      \"status\": 1\r\n    },{\r\n      \"couponId\": 26,\r\n      \"couponSelectQuantity\": 0,\r\n      \"couponAmount\": 30,\r\n      \"status\": 0\r\n    },\r\n    {\r\n      \"couponId\": 13,\r\n      \"couponSelectQuantity\": 1,\r\n      \"couponAmount\": 0.9,\r\n      \"status\": 0\r\n    },\r\n    {\r\n      \"couponId\": 14,\r\n      \"couponSelectQuantity\": 0,\r\n      \"couponAmount\": 0.9,\r\n      \"status\": 0\r\n    }\r\n  ]\r\n}"
+						},
+						"url": {
+							"raw": "http://{{host}}:{{port}}/couponSettle/dynamicSelect",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"couponSettle",
+								"dynamicSelect"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "在可用优惠券列表中选择订单排他优惠券返回优惠金额及优惠券列表",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"couponReduceTargetFlag\": 1,\r\n  \"skuId\": \"A00001\",\r\n  \"goodsSalePrice\": 100.00,\r\n  \"shopId\": \"S00001\",\r\n  \"totalAmount\": 500.00,\r\n  \"dynamicCalcSelectedCouponList\": [\r\n    {\r\n      \"couponId\": 16,\r\n      \"couponSelectQuantity\": 0,\r\n      \"couponAmount\": 0.8,\r\n      \"status\": 0\r\n    },\r\n    {\r\n      \"couponId\": 17,\r\n      \"couponSelectQuantity\": 0,\r\n      \"couponAmount\": 5,\r\n      \"status\": 0\r\n    },\r\n    {\r\n      \"couponId\": 18,\r\n      \"couponSelectQuantity\": 0,\r\n      \"couponAmount\": 10,\r\n      \"status\": 0\r\n    },\r\n    {\r\n      \"couponId\": 19,\r\n      \"couponSelectQuantity\": 0,\r\n      \"couponAmount\": 20,\r\n      \"status\": 0\r\n    },\r\n    {\r\n      \"couponId\": 24,\r\n      \"couponSelectQuantity\": 0,\r\n      \"couponAmount\": 5,\r\n      \"status\": 0\r\n    },\r\n    {\r\n      \"couponId\": 27,\r\n      \"couponSelectQuantity\": 0,\r\n      \"couponAmount\": 0,\r\n      \"status\": 0\r\n    },\r\n    {\r\n      \"couponId\": 15,\r\n      \"couponSelectQuantity\": 1,\r\n      \"couponAmount\": 0.8,\r\n      \"status\": 1\r\n    }\r\n  ]\r\n}"
+						},
+						"url": {
+							"raw": "http://{{host}}:{{port}}/couponSettle/dynamicSelect",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"couponSettle",
+								"dynamicSelect"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "在可用优惠券列表中选择订单并存优惠券返回优惠金额及优惠券列表",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"couponReduceTargetFlag\": 1,\r\n  \"skuId\": \"A00001\",\r\n  \"goodsSalePrice\": 100.00,\r\n  \"shopId\": \"S00001\",\r\n  \"totalAmount\": 500.00,\r\n  \"dynamicCalcSelectedCouponList\": [\r\n    {\r\n      \"couponId\": 16,\r\n      \"couponSelectQuantity\": 1,\r\n      \"couponAmount\": 0.8,\r\n      \"status\": 1\r\n    },\r\n    {\r\n      \"couponId\": 17,\r\n      \"couponSelectQuantity\": 1,\r\n      \"couponAmount\": 5,\r\n      \"status\": 1\r\n    },\r\n    {\r\n      \"couponId\": 18,\r\n      \"couponSelectQuantity\": 1,\r\n      \"couponAmount\": 10,\r\n      \"status\": 1\r\n    },\r\n    {\r\n      \"couponId\": 19,\r\n      \"couponSelectQuantity\": 0,\r\n      \"couponAmount\": 20,\r\n      \"status\": 0\r\n    },\r\n    {\r\n      \"couponId\": 24,\r\n      \"couponSelectQuantity\": 1,\r\n      \"couponAmount\": 5,\r\n      \"status\": 1\r\n    },\r\n    {\r\n      \"couponId\": 27,\r\n      \"couponSelectQuantity\": 0,\r\n      \"couponAmount\": 0,\r\n      \"status\": 0\r\n    },\r\n    {\r\n      \"couponId\": 15,\r\n      \"couponSelectQuantity\": 0,\r\n      \"couponAmount\": 0.8,\r\n      \"status\": 0\r\n    }\r\n  ]\r\n}"
+						},
+						"url": {
+							"raw": "http://{{host}}:{{port}}/couponSettle/dynamicSelect",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"couponSettle",
+								"dynamicSelect"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userId为3的用户购买一种商品使用商品优惠券和订单优惠券",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"memberDto\": {\n    \"userId\": \"3\",\n    \"userCode\": \"LK-User03\",\n    \"userName\": \"tomcat\",\n    \"level\": 1,\n    \"expValue\": 670665403,\n    \"age\": 18,\n    \"gender\": 1,\n    \"phoneNumber\": \"1388888\"\n  },\n  \"orderDto\": {\n    \"orderId\": \"001\",\n    \"orderNo\": \"12358\",\n    \"totalOrderAmount\": 500.00,\n    \"payOrderAmount\": 320.00,\n    \"orderDate\": \"2018-12-09T11:18:52.684Z\",\n    \"orderItemList\": [\n      {\n        \"orderItemId\": \"001\",\n        \"skuId\": \"A00001\",\n        \"shopId\": \"S00001\",\n        \"shopName\": \"阿玛尼天猫店\",\n        \"goodsQuantity\": 10,\n        \"goodsSalePrice\": 50,\n        \"totalGoodsAmount\": 500.00,\n        \"payGoodsAmount\": 320.00,\n        \"useCoupons\": [\n          {\n            \"couponId\": 25,\n            \"couponQuantity\": 2\n          }\n        ]\n      }\n    ],\n    \"useCoupons\": [\n    \t{\n            \"couponId\": 17,\n            \"couponQuantity\": 2\n        }\n    ]\n  }\n}"
+						},
+						"url": {
+							"raw": "http://{{host}}:{{port}}/couponSettle/order/settlement",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"couponSettle",
+								"order",
+								"settlement"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userId为3的用户购买一种商品不使用任何优惠券",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"memberDto\": {\n    \"userId\": \"3\",\n    \"userCode\": \"LK-User03\",\n    \"userName\": \"tomcat\",\n    \"level\": 1,\n    \"expValue\": 67066553,\n    \"age\": 18,\n    \"gender\": 1,\n    \"phoneNumber\": \"1388888\"\n  },\n  \"orderDto\": {\n    \"orderId\": \"001\",\n    \"orderNo\": \"12358\",\n    \"totalOrderAmount\": 200.00,\n    \"payOrderAmount\": 200.00,\n    \"orderDate\": \"2018-12-09T11:38:52.684Z\",\n    \"orderItemList\": [\n      {\n        \"orderItemId\": \"001\",\n        \"skuId\": \"A00001\",\n        \"shopId\": \"S00001\",\n        \"shopName\": \"阿玛尼天猫店\",\n        \"goodsQuantity\": 1,\n        \"goodsSalePrice\": 200,\n        \"totalGoodsAmount\": 200.00,\n        \"payGoodsAmount\": 200.00,\n        \"useCoupons\": [\n          \n        ]\n      }\n      \n    ],\n    \"useCoupons\": [\n    \t\n    ]\n  }\n}"
+						},
+						"url": {
+							"raw": "http://{{host}}:{{port}}/couponSettle/order/settlement",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"couponSettle",
+								"order",
+								"settlement"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userId为3的用户购买两种商品只使用订单优惠券",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"memberDto\": {\n    \"userId\": \"3\",\n    \"userCode\": \"LK-User03\",\n    \"userName\": \"tomcat\",\n    \"level\": 1,\n    \"expValue\": 67066553,\n    \"age\": 18,\n    \"gender\": 1,\n    \"phoneNumber\": \"1388888\"\n  },\n  \"orderDto\": {\n    \"orderId\": \"001\",\n    \"orderNo\": \"12358\",\n    \"totalOrderAmount\": 200.00,\n    \"payOrderAmount\": 200.00,\n    \"orderDate\": \"2018-12-09T11:38:52.684Z\",\n    \"orderItemList\": [\n      {\n        \"orderItemId\": \"001\",\n        \"skuId\": \"A00001\",\n        \"shopId\": \"S00001\",\n        \"shopName\": \"阿玛尼天猫店\",\n        \"goodsQuantity\": 1,\n        \"goodsSalePrice\": 100,\n        \"totalGoodsAmount\": 100.00,\n        \"payGoodsAmount\": 100.00,\n        \"useCoupons\": [\n          \n        ]\n      },\n      {\n        \"orderItemId\": \"002\",\n        \"skuId\": \"A00009\",\n        \"shopId\": \"S00001\",\n        \"shopName\": \"阿玛尼天猫店\",\n        \"goodsQuantity\": 1,\n        \"goodsSalePrice\": 100,\n        \"totalGoodsAmount\": 100.00,\n        \"payGoodsAmount\": 100.00,\n        \"useCoupons\": [\n          \n        ]\n      }\n    ],\n    \"useCoupons\": [\n    \t{\n            \"couponId\": 18,\n            \"couponQuantity\": 2\n        }\n    ]\n  }\n}"
+						},
+						"url": {
+							"raw": "http://{{host}}:{{port}}/couponSettle/order/settlement",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"couponSettle",
+								"order",
+								"settlement"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "优惠券汇总",
+			"item": [
+				{
+					"name": "我的优惠券查询",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8118/couponSummary/getUserCoupon?userId=3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8118",
+							"path": [
+								"couponSummary",
+								"getUserCoupon"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "查询用户优惠券详情",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8118/couponSummary/getUserCouponDetail?userId=3&couponId=25",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8118",
+							"path": [
+								"couponSummary",
+								"getUserCouponDetail"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "3"
+								},
+								{
+									"key": "couponId",
+									"value": "25"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "后台管理",
+			"item": [
+				{
+					"name": "新增或更新优惠券模板",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 29,\r\n    \"accountRuleId\": 1,\r\n    \"companyId\": 5,\r\n    \"couponType\": 1,\r\n    \"accumulated\": 0,\r\n    \"couponName\": \"9折券0123\",\r\n    \"couponDesc\": \"满288元以上使用\",\r\n    \"accumulateType\": 1,\r\n    \"weight\": 3,\r\n    \"supportReturn\": 1,\r\n    \"status\": 0\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://{{host}}:{{backendPort}}/backend/couponManagement/saveCoupon",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{backendPort}}",
+							"path": [
+								"backend",
+								"couponManagement",
+								"saveCoupon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "分页查询满足条件的优惠券模板",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": null,\r\n    \"accountRuleId\": null,\r\n    \"companyId\": 5,\r\n    \"couponType\": null,\r\n    \"accumulated\": null,\r\n    \"couponName\": null,\r\n    \"couponDesc\": null,\r\n    \"accumulateType\": null,\r\n    \"weight\": null,\r\n    \"supportReturn\": null,\r\n    \"status\": null,\r\n    \"isPager\": 1,\r\n    \"pageNum\": 1,\r\n    \"pageSize\": 5\r\n}"
+						},
+						"url": {
+							"raw": "http://{{host}}:{{backendPort}}/backend/couponManagement/queryCoupon",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{backendPort}}",
+							"path": [
+								"backend",
+								"couponManagement",
+								"queryCoupon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "新增或更新优惠券结算规则",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 35,\r\n    \"ruleName\": \"满2000减80\",\r\n    \"ruleDesc\": \"下单满2000以上\",\r\n    \"thresholdType\": 1,\r\n    \"rewardThreshold\": 2000,\r\n    \"rewardType\": 1,\r\n    \"rewardAmount\": 80,\r\n    \"rewardProduct\": null,\r\n    \"rewardActivityId\": null,\r\n    \"rewardDesc\": null,\r\n    \"promotionPrice\": null,\r\n    \"exchangeRatio\": 1\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://{{host}}:{{backendPort}}/backend/accountRule/saveAccountRule",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{backendPort}}",
+							"path": [
+								"backend",
+								"accountRule",
+								"saveAccountRule"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "逻辑删除优惠券结算规则",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://{{host}}:{{backendPort}}/backend/accountRule/deleteAccountRule?accountRuleId=35",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{backendPort}}",
+							"path": [
+								"backend",
+								"accountRule",
+								"deleteAccountRule"
+							],
+							"query": [
+								{
+									"key": "accountRuleId",
+									"value": "35"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "根据条件分页查询优惠券结算规则",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": null,\r\n    \"thresholdType\": null,\r\n    \"rewardThreshold\": null,\r\n    \"rewardType\": null,\r\n    \"rewardAmount\": null,\r\n    \"rewardProduct\": null,\r\n    \"rewardActivityId\": null,\r\n    \"promotionPrice\": null,\r\n    \"isPager\": 1,\r\n    \"pageNum\": 1,\r\n    \"pageSize\": 2\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://{{host}}:{{backendPort}}/backend/accountRule/queryAccountRule",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{backendPort}}",
+							"path": [
+								"backend",
+								"accountRule",
+								"queryAccountRule"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "逻辑删除优惠券模板",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://{{host}}:{{backendPort}}/backend/couponManagement/deleteCoupon?couponId=30",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{backendPort}}",
+							"path": [
+								"backend",
+								"couponManagement",
+								"deleteCoupon"
+							],
+							"query": [
+								{
+									"key": "couponId",
+									"value": "30"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "查询商品可用优惠券列表",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"memberDto\": {\r\n\t\t\"userId\": \"3\",\r\n\t\t\"userCode\": \"LK-User03\",\r\n\t\t\"userName\": \"to\",\r\n\t\t\"level\": 2,\r\n\t\t\"age\": 18,\r\n\t\t\"gender\": 1\r\n\t},\r\n\t\"orderItemDto\": {\r\n\t\t\"skuId\": \"A00001\",\r\n\t\t\"shopId\": \"S00001\",\r\n\t\t\"shopName\": \"天猫超市\",\r\n\t\t\"skuCategory\": \"LKSKCAT01\",\r\n\t\t\"goodsQuantity\": 10,\r\n\t\t\"totalGoodsAmount\": 500.00\r\n\t}\r\n}"
+				},
+				"url": {
+					"raw": "http://{{host}}:{{port}}/couponConsume/item/available/query",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"couponConsume",
+						"item",
+						"available",
+						"query"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "查询订单可用优惠券列表",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n\t\"memberDto\": {\r\n\t\t\"userId\": \"3\",\r\n\t\t\"userCode\": \"LK-User03\",\r\n\t\t\"userName\": \"tomcat\",\r\n\t\t\"level\": 1,\r\n\t\t\"age\": 18,\r\n\t\t\"gender\": 1\r\n\t},\r\n\t\"orderDto\": {\r\n\t\t\"orderId\": \"O00001\",\r\n\t\t\"orderNo\": \"No0001\",\r\n\t\t\"orderDate\": \"2018-12-09\",\r\n\t\t\"totalOrderAmount\": 500.00,\r\n\t\t\"orderItemList\": []\r\n\t}\r\n\r\n}"
+				},
+				"url": {
+					"raw": "http://{{host}}:{{port}}/couponConsume/order/available/query",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"couponConsume",
+						"order",
+						"available",
+						"query"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "动态返回用户选中的优惠券数据及其金额",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"couponReduceTargetFlag\": 2,\r\n  \"userId\": \"1\",\r\n  \"skuId\": \"B00001\",\r\n  \"shopId\": \"121\",\r\n  \"goodsSalePrice\": \"56.00\",\r\n  \"goodsQuantity\": 10,\r\n  \"totalAmount\": 560,\r\n  \"dynamicCalcSelectedCouponList\": [\r\n    {\r\n      \"couponId\": 20,\r\n      \"couponSelectQuantity\": 0,\r\n      \"couponAmount\": 10,\r\n      \"status\": 0\r\n    },\r\n    {\r\n      \"couponId\": 21,\r\n      \"couponSelectQuantity\": 0,\r\n      \"couponAmount\": 10,\r\n      \"status\": 0\r\n    },\r\n    {\r\n      \"couponId\": 22,\r\n      \"couponSelectQuantity\": 0,\r\n      \"couponAmount\": 0,\r\n      \"status\": 0\r\n    },\r\n    {\r\n      \"couponId\": 23,\r\n      \"couponSelectQuantity\": 0,\r\n      \"couponAmount\": 2,\r\n      \"status\": 0\r\n    },\r\n    {\r\n      \"couponId\": 25,\r\n      \"couponSelectQuantity\": 0,\r\n      \"couponAmount\": 0.8,\r\n      \"status\": 0\r\n    },\r\n    {\r\n      \"couponId\": 26,\r\n      \"couponSelectQuantity\": \"2\",\r\n      \"couponAmount\": 30,\r\n      \"status\": 1\r\n    },\r\n    {\r\n      \"couponId\": 13,\r\n      \"couponSelectQuantity\": 0,\r\n      \"couponAmount\": 0.9,\r\n      \"status\": 0\r\n    },\r\n    {\r\n      \"couponId\": 14,\r\n      \"couponSelectQuantity\": 0,\r\n      \"couponAmount\": 0.9,\r\n      \"status\": 0\r\n    }\r\n  ]\r\n}"
+				},
+				"url": {
+					"raw": "http://{{host}}:{{port}}/couponSettle/dynamicSelect",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"couponSettle",
+						"dynamicSelect"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "领券",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"couponReceiveReqDto\":{\n\t\t\"couponId\": 23,\n\t\t\"activityId\": 41,\n\t\t\"requestQuantity\": 5,\n\t\t\"sceneDesc\": \"多次活动领取\",\n\t\t\"orderDto\": {},\n\t\t\"orderItemDto\": {}\n\t},\n\t\"memberDto\":{\n\t\t\"userId\": \"126637\",\n\t\t\"userCode\": \"LK-User126637\",\n\t\t\"userName\": \"wzh\",\n\t\t\"level\": 3,\n\t\t\"age\": 18,\n\t\t\"gender\": 1\n\t}\n}"
+				},
+				"url": {
+					"raw": "http://{{host}}:{{port}}/couponReceive/produceCoupon",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"couponReceive",
+						"produceCoupon"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "结算",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"memberDto\": {\r\n    \"userId\": \"1\",\r\n    \"userCode\": \"LK-User01\",\r\n    \"phoneNumber\": \"13945473074\",\r\n    \"userName\": \"zhd\",\r\n    \"level\": 3,\r\n    \"expValue\": 986983650,\r\n    \"age\": 2,\r\n    \"gender\": 0\r\n  },\r\n  \"orderDto\": {\r\n    \"orderId\": \"89\",\r\n    \"orderNo\": \"1545103633907\",\r\n    \"totalOrderAmount\": 1091,\r\n    \"payOrderAmount\": 1011,\r\n    \"orderDate\": \"2018-12-18T03:27:04.629Z\",\r\n    \"revserveTime\": \"Tue Dec 18 2018 11:27:04 GMT+0800 (中国标准时间)7\",\r\n    \"orderItemList\": [\r\n      {\r\n        \"goodsQuantity\": 3,\r\n        \"orderItemId\": 253,\r\n        \"payGoodsAmount\": \"567.00\",\r\n        \"shopId\": \"s001\",\r\n        \"shopName\": \"阿玛尼天猫店\",\r\n        \"skuId\": \"A00002\",\r\n        \"goodsSalePrice\": \"199.00\",\r\n        \"totalGoodsAmount\": \"597.00\",\r\n        \"useCoupons\": [\r\n          {\r\n            \"couponId\": 21,\r\n            \"couponQuantity\": 2\r\n          },\r\n          {\r\n            \"couponId\": 23,\r\n            \"couponQuantity\": 5\r\n          }\r\n        ]\r\n      },\r\n      {\r\n        \"goodsQuantity\": 10,\r\n        \"orderItemId\": 453,\r\n        \"payGoodsAmount\": \"444.00\",\r\n        \"shopId\": \"121\",\r\n        \"shopName\": \"蒙牛旗舰店\",\r\n        \"skuId\": \"B00001\",\r\n        \"goodsSalePrice\": \"56.00\",\r\n        \"totalGoodsAmount\": \"560.00\",\r\n        \"useCoupons\": [\r\n          {\r\n            \"couponId\": 26,\r\n            \"couponQuantity\": 2\r\n          },\r\n          {\r\n            \"couponId\": 14,\r\n            \"couponQuantity\": 1\r\n          }\r\n        ]\r\n      }\r\n    ],\r\n    \"useCoupons\": [\r\n      \r\n    ]\r\n  }\r\n}"
+				},
+				"url": {
+					"raw": "http://{{host}}:{{port}}/couponSettle/order/settlement",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"couponSettle",
+						"order",
+						"settlement"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "用券",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"memberDto\": {\r\n    \"userId\": \"1\",\r\n    \"userCode\": \"LK-User01\",\r\n    \"phoneNumber\": \"13945473074\",\r\n    \"userName\": \"zhd\",\r\n    \"level\": 3,\r\n    \"expValue\": 633579355,\r\n    \"age\": 5,\r\n    \"gender\": 1\r\n  },\r\n  \"orderDto\": {\r\n    \"orderId\": \"31\",\r\n    \"orderNo\": \"1545117999430\",\r\n    \"totalOrderAmount\": \"1091.00\",\r\n    \"originOrderAmount\": 1157,\r\n    \"payOrderAmount\": 1011,\r\n    \"orderDate\": \"2018-12-18T07:26:30.542Z\",\r\n    \"revserveTime\": \"Tue Dec 18 2018 15:26:30 GMT+0800 (中国标准时间)7\",\r\n    \"orderItemList\": [\r\n      {\r\n        \"goodsQuantity\": 10,\r\n        \"orderItemId\": 325,\r\n        \"payGoodsAmount\": \"444.00\",\r\n        \"shopId\": \"121\",\r\n        \"shopName\": \"蒙牛旗舰店\",\r\n        \"skuId\": \"B00001\",\r\n        \"goodsSalePrice\": \"56.00\",\r\n        \"totalGoodsAmount\": \"560.00\",\r\n        \"useCoupons\": [\r\n          {\r\n            \"couponId\": 26,\r\n            \"couponQuantity\": 2\r\n          },\r\n          {\r\n            \"couponId\": 14,\r\n            \"couponQuantity\": 1\r\n          }\r\n        ]\r\n      },\r\n      {\r\n        \"goodsQuantity\": 3,\r\n        \"orderItemId\": 933,\r\n        \"payGoodsAmount\": \"567.00\",\r\n        \"shopId\": \"s001\",\r\n        \"shopName\": \"阿玛尼天猫店\",\r\n        \"skuId\": \"A00002\",\r\n        \"goodsSalePrice\": \"199.00\",\r\n        \"totalGoodsAmount\": \"597.00\",\r\n        \"useCoupons\": [\r\n          {\r\n            \"couponId\": 21,\r\n            \"couponQuantity\": 2\r\n          },\r\n          {\r\n            \"couponId\": 23,\r\n            \"couponQuantity\": 5\r\n          }\r\n        ]\r\n      }\r\n    ],\r\n    \"useCoupons\": [\r\n      {\r\n        \"couponId\": 16,\r\n        \"couponQuantity\": 1\r\n      },\r\n      {\r\n        \"couponId\": 27,\r\n        \"couponQuantity\": 3\r\n      }\r\n    ]\r\n  }\r\n}"
+				},
+				"url": {
+					"raw": "http://{{host}}:{{port}}/couponConsume/consume",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"couponConsume",
+						"consume"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "301be0be-a3a4-4f11-bd0e-7ef1bb2f1022",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "ac616c7e-8d69-4b8b-82ae-1b3e6e0b03c5",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

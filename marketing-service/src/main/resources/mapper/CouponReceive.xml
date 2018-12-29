@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="lk.project.marketing.mapper.CouponReceiveMapper">
+
+    <resultMap id="BaseResultMap" type="lk.project.marketing.base.entity.CouponReceive">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="user_id" property="userId" />
+        <result column="user_code" property="userCode" />
+        <result column="coupon_id" property="couponId" />
+        <result column="activity_id" property="activityId" />
+        <result column="coupon_amount" property="couponAmount" />
+        <result column="receive_quantity" property="receiveQuantity" />
+        <result column="remain_quantity" property="remainQuantity" />
+        <result column="start_date" property="startDate" />
+        <result column="end_date" property="endDate" />
+        <result column="remark" property="remark" />
+        <result column="order_id" property="orderId" />
+        <result column="order_no" property="orderNo" />
+        <result column="order_item_id" property="orderItemId"/>
+        <result column="status" property="status" />
+
+        <result column="is_delete" property="delete" />
+        <result column="creator_id" property="creatorId" />
+        <result column="created_at" property="createdAt" />
+        <result column="modifier_id" property="modifierId" />
+        <result column="modified_at" property="modifiedAt" />
+        <!--<association property="coupon" javaTyCouponupon" column="coupon_id"-->
+                     <!--seleCouponMapperpper.getCouponById"/>-->
+        <!--<association property="promotionActivity" javaTyPromotionActivityvity" column="activity_id"-->
+                     <!--select="lk.project.marketing.mapper.PromotionActivityMapper.getActivityById"/>-->
+        <!--<collection property="couponReceiveDetailList" javaType="list" ofTyCouponReceiveDetailtail"-->
+                    <!--column="id" seleCouponReceiveDetailMapperpper.getCouponReceiveDetailListByCouponReceiveId"/>-->
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, user_id, user_code, coupon_id, activity_id,
+        is_delete, created_at,
+        creator_id, modified_at, modifier_id
+    </sql>
+
+    <select id="getCouponActivityIdsByReceiveIds" parameterType="java.util.List" resultType="java.lang.Long">
+        SELECT DISTINCT activity_id
+        <include refid="Base_Column_List"/>
+        FROM t_coupon_receive
+        <where>
+            id IN
+            <foreach collection="list" item="item" index="index" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </where>
+    </select>
+
+    <select id="getReceivedCouponQuantities" resultType="java.lang.Long">
+        select sum(receive_quantity) from t_coupon_receive where user_id = #{userId} and activity_id = #{activityId}
+        and is_delete = 0
+    </select>
+</mapper>

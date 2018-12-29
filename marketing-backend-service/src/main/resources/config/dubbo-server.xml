@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo" xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+            http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+
+    <!--<context:property-placeholder location="classpath:application.yml" />-->
+    <dubbo:application name="${dubbo.application.name}"/>
+    <dubbo:provider timeout="${dubbo.provider.timeout}" token="${dubbo.provider.token}"/>
+    <dubbo:consumer timeout="${dubbo.consumer.timeout}" check="${dubbo.consumer.check}"/>
+    <dubbo:registry protocol="${dubbo.registry.protocol}" address="${dubbo.registry.address}"
+                    username="${dubbo.admin.username}" password="${dubbo.admin.password}"
+                    group="${dubbo.registry.group}" timeout="${dubbo.registry.timeout}"/>
+    <dubbo:protocol name="${dubbo.protocol.name}" dispatcher="${dubbo.protocol.dispatcher}"
+                    threadpool="${dubbo.protocol.threadpool}" threads="${dubbo.protocol.threads}"
+                    accepts="${dubbo.protocol.accepts}" port="${dubbo.protocol.port}"
+                    charset="${dubbo.protocol.charset}" payload="${dubbo.protocol.payload}"/>
+
+    <!-- 将具体的实现类加入到Spring容器中 -->
+    <bean id="couponManagementInterfaceImpl" class="lk.project.marketing.backend.service.rpc.CouponManagementInterfaceImpl"/>
+    <bean id="accountRuleManagementInterfaceImpl" class="lk.project.marketing.backend.service.rpc.AccountRuleManagementInterfaceImpl"/>
+    <bean id="couponSummaryManagementInterfaceImpl" class="lk.project.marketing.backend.service.rpc.CouponSummaryManagementInterfaceImpl"/>
+
+    <!--暴露接口-->
+    <dubbo:service interface="lk.project.marketing.client.rpc.CouponManagementInterface"
+                   ref="couponManagementInterfaceImpl" loadbalance="${dubbo.service.loadbalance}"/>
+    <dubbo:service interface="lk.project.marketing.client.rpc.AccountRuleManagementInterface"
+                   ref="accountRuleManagementInterfaceImpl" loadbalance="${dubbo.service.loadbalance}"/>
+    <dubbo:service interface="lk.project.marketing.client.rpc.CouponSummaryManagementInterface"
+                   ref="couponSummaryManagementInterfaceImpl" loadbalance="${dubbo.service.loadbalance}"/>
+</beans>

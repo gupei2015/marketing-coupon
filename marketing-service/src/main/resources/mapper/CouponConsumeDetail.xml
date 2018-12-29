@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="lk.project.marketing.mapper.CouponConsumeDetailMapper">
+
+    <resultMap id="CouponConsumeDetailMap" type="lk.project.marketing.base.entity.CouponConsumeDetail">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="coupon_consume_id" property="couponConsumeId" />
+        <result column="coupon_receive_id" property="couponReceiveId" />
+        <result column="coupon_receive_detail_ids" property="couponReceiveDetailIds" />
+        <result column="activity_id" property="activityId" />
+        <result column="consume_quantity" property="consumeQuantity" />
+
+        <result column="is_delete" property="delete" />
+        <result column="creator_id" property="creatorId" />
+        <result column="created_at" property="createdAt" />
+        <result column="modifier_id" property="modifierId" />
+        <result column="modified_at" property="modifiedAt" />
+        <!--<association property="couponReceive" javaTyCouponReceiveeive" column="coupon_receive_id" seleCouponReceiveMapperpper.getCouponReceiveById" />-->
+    </resultMap>
+
+    <sql id="CouponConsumeDetail">
+        id, coupon_consume_id, coupon_receive_id, coupon_receive_detail_ids, activity_id,
+        consume_quantity, is_delete, creator_id, created_at, modifier_id, modified_at
+    </sql>
+    <select id="getCouponConsumeDetailListByConsumeId" resultMap="CouponConsumeDetailMap">
+        select
+        <include refid="CouponConsumeDetail"/>
+        from t_coupon_consume_detail where coupon_consume_id = #{couponConsumeId} and is_delete = 0
+    </select>
+</mapper>

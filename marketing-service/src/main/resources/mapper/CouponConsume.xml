@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="lk.project.marketing.mapper.CouponConsumeMapper">
+
+    <resultMap id="CouponConsumeMap" type="lk.project.marketing.base.entity.CouponConsume">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="user_id" property="userId" />
+        <result column="user_code" property="userCode" />
+        <result column="shop_id" property="shopId" />
+        <result column="coupon_id" property="couponId" />
+        <result column="order_id" property="orderId" />
+        <result column="order_no" property="orderNo" />
+        <result column="original_amount" property="originalAmount" />
+        <result column="coupon_amount" property="couponAmount" />
+        <result column="consume_quantity" property="consumeQuantity" />
+        <result column="final_pay_amount" property="finalPayAmount" />
+        <result column="status" property="status" />
+        <result column="is_delete" property="delete" />
+        <result column="creator_id" property="creatorId" />
+        <result column="created_at" property="createdAt" />
+        <result column="modifier_id" property="modifierId" />
+        <result column="modified_at" property="modifiedAt" />
+        <!--<association property="coupon" javaTyCouponupon" column="coupon_id"-->
+                     <!--seleCouponMapperpper.getCouponById" />-->
+        <!--<collection property="couponConsumeDetailList" javaType="list" ofTyCouponConsumeDetailtail"-->
+                    <!--column="id" seleCouponConsumeDetailMapperpper.getCouponConsumeDetailListByConsumeId" />-->
+    </resultMap>
+
+</mapper>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="lk.project.marketing.mapper.AccountRuleMapper">
+
+    <resultMap id="AccountRuleMap" type="lk.project.marketing.base.entity.AccountRule">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="rule_name" property="ruleName"/>
+        <result column="rule_desc" property="ruleDesc"/>
+        <result column="threshold_type" property="thresholdType"/>
+        <result column="reward_threshold" property="rewardThreshold"/>
+        <result column="reward_type" property="rewardType"/>
+        <result column="reward_amount" property="rewardAmount"/>
+        <result column="reward_product" property="rewardProduct"/>
+        <result column="reward_activity_id" property="rewardActivityId"/>
+        <result column="reward_desc" property="rewardDesc"/>
+        <result column="promotion_price" property="promotionPrice"/>
+        <result column="exchange_ratio" property="exchangeRatio"/>
+
+        <result column="is_delete" property="delete" />
+        <result column="creator_id" property="creatorId" />
+        <result column="created_at" property="createdAt" />
+        <result column="modifier_id" property="modifierId" />
+        <result column="modified_at" property="modifiedAt" />
+    </resultMap>
+
+    <sql id="accountRule">
+        id, rule_name, rule_desc, threshold_type, reward_threshold, reward_type, reward_amount,
+        reward_product, reward_activity_id, reward_desc, promotion_price, exchange_ratio,
+        is_delete, creator_id, created_at, modifier_id, modified_at
+    </sql>
+
+    <select id="getAccountRuleById" resultMap="AccountRuleMap">
+        select
+        <include refid="accountRule"/>
+        from t_coupon_account_rule
+        where id = #{id} and is_delete = 0
+    </select>
+</mapper>

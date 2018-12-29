@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="lk.project.marketing.backend.mapper.ActivityManagementMapper">
+
+    <resultMap id="activityMap" type="lk.project.marketing.base.entity.PromotionActivity">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="coupon_id" property="couponId" />
+        <result column="activity_name" property="activityName" />
+        <result column="activity_desc" property="activityDesc" />
+        <result column="activity_start" property="activityStart" />
+        <result column="activity_end" property="activityEnd" />
+        <result column="effect_date" property="effectDate"/>
+        <result column="effect_days" property="effectDays" />
+        <result column="start_time" property="startTime" />
+        <result column="end_time" property="endTime" />
+        <result column="is_quantityLimit" property="quantityLimit" />
+        <result column="issue_quantity" property="issueQuantity" />
+        <result column="received_quantity" property="receivedQuantity" />
+        <result column="limit_quantity" property="limitQuantity" />
+        <result column="auto_issue_quantity" property="autoIssueQuantity" />
+        <result column="auto_issue_time" property="autoIssueTime" />
+        <result column="status" property="status" />
+
+        <result column="is_delete" property="delete" />
+        <result column="creator_id" property="creatorId" />
+        <result column="created_at" property="createdAt" />
+        <result column="modifier_id" property="modifierId" />
+        <result column="modified_at" property="modifiedAt" />
+        <collection property="promotionRules" javaType="list" ofType="lk.project.marketing.base.entity.PromotionRule" column="id" select="lk.project.marketing.backend.mapper.PromotionRuleManagementMapper.getPromotionRuleListByActivityId"/>
+    </resultMap>
+
+    <sql id="activity">
+        id, coupon_id, activity_name, activity_desc, activity_start, activity_end,
+        start_time, end_time, effect_date, effect_days, is_quantityLimit, issue_quantity,
+        received_quantity, limit_quantity, auto_issue_quantity, auto_issue_time, status,
+        is_delete, creator_id, created_at, modifier_id, modified_at
+    </sql>
+
+    <select id="getActivityListByCouponId" resultMap="activityMap">
+        select
+        <include refid="activity" />
+        from t_promotion_activity where coupon_id = #{couponId} and is_delete = 0
+    </select>
+
+    <select id="getActivityIdListByCouponIdList" parameterType="java.util.List" resultType="java.lang.Long">
+        SELECT DISTINCT id
+        <include refid="activity"/>
+        FROM t_promotion_activity
+        <where>
+            coupon_id IN
+            <foreach collection="list" item="item" index="index" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </where>
+    </select>
+
+    <select id="getActivityById" resultMap="activityMap">
+        select
+        <include refid="activity"/>
+        from t_promotion_activity where id = #{id} and is_delete = 0
+    </select>
+
+    <update id="updateActivity">
+        update t_promotion_activity set
+        coupon_id = #{couponId}, activity_name = #{activityName}, activity_desc = #{activityDesc},
+        activity_start = #{activityStart}, activity_end = #{activityEnd}, effect_date = #{effectDate},
+        effect_days = #{effectDays}, start_time = #{startTime}, end_time = #{endTime},  is_quantityLimit = #{quantityLimit},
+        issue_quantity = #{issueQuantity}, received_quantity = #{receivedQuantity}, limit_quantity = #{limitQuantity},
+        auto_issue_quantity = #{autoIssueQuantity}, auto_issue_time = #{autoIssueTime}, status = #{status},
+        is_delete = #{delete}, creator_id = #{creatorId}, created_at = #{createdAt}, modifier_id = #{modifierId},
+        modified_at = #{modifiedAt} where id = #{id}
+    </update>
+</mapper>

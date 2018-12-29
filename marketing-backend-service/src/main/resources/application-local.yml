@@ -1,0 +1,66 @@
+spring:
+  datasource:
+#    url: jdbc:mysql://10.39.10.107:3306/lk-p-marketing?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2b8&allowMultiQueries=true
+#    username: root
+#    password: 123456
+    url: jdbc:mysql://localhost:3306/cptest?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2b8&allowMultiQueries=true
+    username: root
+    password: 602231903
+    driver-class-name: com.mysql.jdbc.Driver
+  redis:
+    database: 2 # Database index used by the connection factory.
+    host: localhost
+    password:
+    port: 6379
+    pool:
+      use: true
+      max-active: 20
+      max-idle: 10
+
+dubbo:
+  application:
+    name: lk-project-marketing-backend-service
+    owner: bill
+    logger: slf4j
+  registry:
+    address: zookeeper://localhost:2181
+    protocol: zookeeper
+    check: false
+    subscribe: true
+    timeout: 10000
+    group: dubbo
+  monitor:
+    protocol: registry
+  protocol:
+    name: dubbo
+    port: 20881
+    threadpool: fixed
+    threads: 100
+    accepts: 1000
+    charset: UTF-8
+    dispatcher: all
+    payload: 104857600
+    timeout: 10000
+    check: false
+    token: false
+  provider:
+    timeout: 10000
+    check: false
+    token: false
+  consumer:
+    timeout: 10000
+    check: false
+  service:
+    retries: 2
+    timeout: 10000
+    loadbalance: consistenthash
+  admin:
+    username: root
+    password: root
+lk:
+  storage:
+    accessKey: CDWR02D6F2Q2HNLI3MOY
+    secretKey: 2GH7bIJye6ti34zinSEiCaK7ZB1amCiv9v8m9rgj
+    endpointAddr: 10.19.248.200:30150
+    baseUrl: http://upload-image-ext.cloud.enndata.cn/common/fileDownload/
+    bucketNamePrefix: market-center-coupon

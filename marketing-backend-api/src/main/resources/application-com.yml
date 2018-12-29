@@ -1,0 +1,42 @@
+server:
+ port: 8119
+dubbo:
+  application:
+    name: ${DUBBO_APPLICATION_NAME}
+    owner: bill
+    logger: slf4j
+  registry:
+    address: ${DUBBO_REGISTRY_ADDRESS}
+    protocol: zookeeper
+    check: false
+    subscribe: true
+    timeout: 10000
+    group: dubbo
+  monitor:
+    protocol: registry
+  protocol:
+    name: dubbo
+    port: 20881
+    threadpool: fixed
+    threads: 100
+    accepts: 1000
+    charset: UTF-8
+    dispatcher: all
+    payload: 104857600
+    timeout: 10000
+    check: false
+    token: false
+  provider:
+    timeout: 10000
+    check: false
+    token: false
+  consumer:
+    timeout: 60000
+    check: false
+  service:
+    retries: 2
+    timeout: 10000
+    loadbalance: consistenthash
+  admin:
+    username: root
+    password: root

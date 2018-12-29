@@ -1,0 +1,68 @@
+spring:
+  datasource:
+    url: ${MYSQL_DB_URL}
+    username: ${MYSQL_DB_USER}
+    password: ${MYSQL_DB_PW}
+    driver-class-name: com.mysql.jdbc.Driver
+  redis:
+    database: 2 # Database index used by the connection factory.
+    cluster:
+      nodes:
+        ${REDIS_CLUST_HOST}
+    password:
+    pool:
+      use: true
+      max-active: 20
+      max-idle: 10
+dubbo:
+  application:
+    name: ${DUBBO_APPLICATION_NAME}
+    owner: bill
+    logger: slf4j
+  registry:
+    address: ${DUBBO_REGISTRY_ADDRESS}
+    protocol: zookeeper
+    check: false
+    subscribe: true
+    timeout: 10000
+    group: dubbo
+  monitor:
+    protocol: registry
+  protocol:
+    name: dubbo
+    port: 20881
+    threadpool: fixed
+    threads: 100
+    accepts: 1000
+    charset: UTF-8
+    dispatcher: all
+    payload: 104857600
+    timeout: 10000
+    check: false
+    token: false
+  provider:
+    timeout: 10000
+    check: false
+    token: false
+  consumer:
+    timeout: 10000
+    check: false
+  service:
+    retries: 2
+    timeout: 10000
+    loadbalance: consistenthash
+  admin:
+    username: root
+    password: root
+lk:
+#  redis:
+#    clusterHost: ${REDIS_CLUST_HOST}
+#    clusterPort: ${REDIS_CLUST_PORT}
+#    redisPassword:
+#    expireTime: 3600
+  storage:
+    accessKey: ${CEPH_ACCESS_KEY}
+    secretKey: ${CEPH_SECRET_KEY}
+    endpointAddr: ${CEPH_ENDPOINT_ADDRESS}
+    baseUrl: ${CEPH_BASE_URL}
+    bucketNamePrefix: ${CEPH_BUCKET_NAME_PREFIX}

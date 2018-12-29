@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="lk.project.marketing.mapper.PromotionRuleMapper">
+
+    <resultMap id="promotionRuleMap" type="lk.project.marketing.base.entity.PromotionRule">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="activity_id" property="activityId" />
+        <result column="rule_name" property="ruleName" />
+        <result column="rule_type" property="ruleType" />
+        <result column="user_condition" property="userCondition" />
+        <result column="sku_condition" property="skuCondition" />
+        <result column="order_condition" property="orderCondition" />
+        <result column="time_condition" property="timeCondition" />
+        <result column="extras_condition" property="extrasCondition" />
+
+        <result column="is_delete" property="delete" />
+        <result column="creator_id" property="creatorId" />
+        <result column="created_at" property="createdAt" />
+        <result column="modifier_id" property="modifierId" />
+        <result column="modified_at" property="modifiedAt" />
+    </resultMap>
+
+    <sql id="PromotionRule">
+        id, activity_id, rule_name, rule_type, user_condition, sku_condition, order_condition, time_condition,
+        extras_condition, is_delete, creator_id, created_at, modifier_id, modified_at
+    </sql>
+
+    <select id="getPromotionRuleListByActivityId" resultMap="promotionRuleMap">
+        select
+        <include refid="PromotionRule"/>
+        from t_promotion_rule where activity_id = #{activityId} and is_delete = 0
+    </select>
+</mapper>

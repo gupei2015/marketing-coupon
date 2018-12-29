@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="lk.project.marketing.backend.mapper.CouponReceiveDetailManagementMapper">
+
+    <resultMap id="CouponReceiveDetailMap" type="lk.project.marketing.base.entity.CouponReceiveDetail">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="coupon_receive_id" property="couponReceiveId" />
+        <result column="coupon_no" property="couponNo" />
+        <result column="coupon_amount" property="couponAmount" />
+        <result column="coupon_qr_code_url" property="couponQrCodeUrl" />
+        <result column="status" property="status" />
+        <result column="is_delete" property="delete" />
+        <result column="creator_id" property="creatorId" />
+        <result column="created_at" property="createdAt" />
+        <result column="modifier_id" property="modifierId" />
+        <result column="modified_at" property="modifiedAt" />
+    </resultMap>
+	
+	<resultMap id="CouponSummaryDetailBoMap" type="lk.project.marketing.base.bo.CouponSummaryDetailBo">
+		<result column="id" property="receiveId" />
+		<result column="user_id" property="userID" />
+		<result column="user_code" property="userCode" />
+		<result column="coupon_id" property="couponID" />
+		<result column="activity_id" property="activityID" />
+		<result column="remain_quantity" property="remainQuantity" />
+		<result column="start_date" property="startDate" />
+		<result column="end_date" property="endDate" />
+		<result column="remark" property="remark" />
+		<result column="created_at" property="createAt" />
+		<result column="coupon_no" property="couponNo" />
+		<result column="coupon_amount" property="couponAmount" />
+		<result column="coupon_qr_code_url" property="qrCodeUrl" />
+	</resultMap>
+
+    <select id="getUserCouponReceiveDetailListByCouponId" resultMap="CouponSummaryDetailBoMap">
+		SELECT
+			cr.id,
+			cr.user_id,
+			cr.user_code,
+			cr.coupon_id,
+			cr.activity_id,
+			cr.remain_quantity,
+			cr.start_date,
+			cr.end_date,
+			cr.remark,
+			cr.created_at,
+			crd.coupon_no,
+			crd.coupon_amount,
+			crd.coupon_qr_code_url
+		FROM
+			t_coupon_receive cr
+		LEFT JOIN (
+			SELECT
+				coupon_receive_id,
+				coupon_no,
+				coupon_amount,
+				coupon_qr_code_url
+			FROM
+				t_coupon_receive_detail
+			WHERE
+				`status` = 0
+		) crd ON cr.id = crd.coupon_receive_id
+		WHERE
+			cr.user_id = #{userID}
+		AND cr.`status` IN (0, 2)
+		AND cr.remain_quantity>0
+		AND cr.coupon_id = #{couponID}
+    </select>
+</mapper>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="lk.project.marketing.mapper.CouponSummaryMapper">
+
+    <resultMap id="CouponSummaryMap" type="lk.project.marketing.base.entity.CouponSummary">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="user_id" property="userId" />
+        <result column="user_code" property="userCode" />
+        <result column="coupon_id" property="couponId" />
+        <result column="coupon_amount" property="couponAmount" />
+        <result column="received_quantity" property="receivedQuantity" />
+        <result column="consumed_quantity" property="consumedQuantity" />
+        <result column="reward_amount" property="rewardAmount" />
+        <result column="coupon_quantity" property="couponQuantity" />
+        <result column="is_delete" property="delete" />
+        <result column="creator_id" property="creatorId" />
+        <result column="created_at" property="createdAt" />
+        <result column="modifier_id" property="modifierId" />
+        <result column="modified_at" property="modifiedAt" />
+    </resultMap>
+
+    <resultMap id="CouponHistoryDetailsResultMap" type="lk.project.marketing.base.bo.CouponHistoryInfoBo">
+        <result column="user_id" property="userId" />
+        <result column="user_code" property="userCode" />
+        <result column="coupon_id" property="couponId" />
+        <result column="activity_name" property="activityName" />
+        <result column="activity_desc" property="activityDesc" />
+        <result column="activity_start" property="activityStart" />
+        <result column="activity_end" property="activityEnd" />
+        <result column="start_date" property="startDate" />
+        <result column="end_date" property="endDate" />
+        <result column="start_time" property="startTime" />
+        <result column="end_time" property="endTime" />
+        <result column="coupon_amount" property="couponAmount" />
+        <result column="consume_used_quantity" property="consumeUsedQuantity" />
+        <result column="remark" property="remark" />
+        <result column="received_quantity" property="receivedQuantity" />
+        <result column="consumed_quantity" property="consumedQuantity" />
+        <result column="reward_amount" property="rewardAmount" />
+        <result column="coupon_available_quantity" property="couponAvailableQuantity" />
+    </resultMap>
+
+    <select id="getCouponHistoryDetailsByUserOrder" resultMap="CouponHistoryDetailsResultMap">
+      SELECT csm.user_id, csm.user_code, csm.coupon_id, activity_name, activity_desc, activity_start, activity_end, start_date, end_date,
+             start_time, end_time, recv.coupon_amount, csmdt.consume_quantity AS consume_used_quantity, recv.remark, cpsm.received_quantity,
+             cpsm.consumed_quantity,cpsm.reward_amount,cpsm.coupon_quantity AS coupon_available_quantity
+      FROM t_coupon_consume csm LEFT JOIN t_coupon_consume_detail csmdt ON csm.id=csmdt.coupon_consume_id
+           LEFT JOIN t_coupon_receive recv ON csmdt.coupon_receive_id=recv.id
+           LEFT JOIN t_promotion_activity act ON recv.activity_id=act.id
+           LEFT JOIN t_coupon_summary cpsm ON csm.user_id=cpsm.user_id AND csm.coupon_id=cpsm.coupon_id
+     WHERE csm.user_id=#{userId} AND csm.order_id=#{orderId}
+    </select>
+</mapper>

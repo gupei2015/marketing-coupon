@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="lk.project.marketing.mapper.CouponMapper">
+
+    <resultMap id="CouponMap" type="lk.project.marketing.base.entity.Coupon">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="account_rule_id" property="accountRuleId" />
+        <result column="company_id" property="companyId" />
+        <result column="coupon_type" property="couponType" />
+        <result column="is_accumulated" property="accumulated" />
+        <result column="coupon_name" property="couponName" />
+        <result column="coupon_desc" property="couponDesc" />
+        <result column="icon" property="icon" />
+        <result column="shop_id" property="shopId" />
+        <result column="sku_category" property="skuCategory" />
+        <result column="user_category" property="userCategory" />
+        <result column="sku_id" property="skuId" />
+        <result column="accumulate_type" property="accumulateType" />
+        <result column="weight" property="weight" />
+        <result column="is_supportReturn" property="supportReturn" />
+        <result column="status" property="status" />
+
+        <result column="is_delete" property="delete" />
+        <result column="creator_id" property="creatorId" />
+        <result column="created_at" property="createdAt" />
+        <result column="modifier_id" property="modifierId" />
+        <result column="modified_at" property="modifiedAt" />
+        <association property="accountRule" javaType="lk.project.marketing.base.entity.AccountRule" column="account_rule_id" select="lk.project.marketing.mapper.AccountRuleMapper.getAccountRuleById"/>
+        <collection property="activityPromotionList" javaType="list" ofType="lk.project.marketing.base.entity.PromotionActivity" column="id" select="lk.project.marketing.mapper.ActivityMapper.getActivityListByCouponId"/>
+    </resultMap>
+
+    <sql id="coupon">
+        id, account_rule_id, company_id, coupon_type, is_accumulated, coupon_name, coupon_desc,
+        icon, shop_id, sku_category, user_category, sku_id, accumulate_type, weight,
+        is_supportReturn, status, is_delete, creator_id, created_at, modifier_id, modified_at
+    </sql>
+    
+    <select id="getCouponById" resultMap="CouponMap">
+        SELECT
+        <include refid="coupon"/>
+        FROM t_coupon
+        WHERE id = #{id} AND is_delete = 0
+    </select>
+
+    <update id="updateCouponById">
+        update t_coupon set
+        account_rule_id = #{accountRuleId}, company_id = #{companyId}, coupon_type = #{couponType},
+        is_accumulated = #{accumulated}, coupon_name = #{couponName}, coupon_desc = #{couponDesc},
+        icon = #{icon}, shop_id = #{shopId}, sku_category = #{skuCategory},  user_category = #{userCategory},
+        sku_id = #{skuId}, accumulate_type = #{accumulateType}, weight = #{weight},
+        is_supportReturn = #{supportReturn}, status = #{status},
+        is_delete = #{delete}, creator_id = #{creatorId}, created_at = #{createdAt}, modifier_id = #{modifierId},
+        modified_at = #{modifiedAt} where id = #{id}
+    </update>
+
+</mapper>

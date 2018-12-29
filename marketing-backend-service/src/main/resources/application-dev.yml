@@ -1,0 +1,70 @@
+spring:
+  datasource:
+#    url: jdbc:mysql://10.39.10.107:3306/lk-p-marketing?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2b8&allowMultiQueries=true
+#    username: root
+#    password: 123456
+    url: jdbc:mysql://10.19.248.200:30057/lk-p-marketing?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2b8&allowMultiQueries=true
+    username: cloudAdmin
+    password: Ab123..
+    driver-class-name: com.mysql.jdbc.Driver
+  redis:
+    database: 2 # Database index used by the connection factory.
+    cluster:
+      nodes:
+        - 192.168.1.18:30001  #10.19.131.109:30001
+#    host: localhost
+#    port: 6379
+    password:
+    pool:
+      use: true
+      max-active: 5000
+      max-idle: 5000
+      max-wait: 10000
+      test-on-borrow: true
+dubbo:
+  application:
+    name: lk-project-marketing-backend-service
+    owner: bill
+    logger: slf4j
+  registry:
+    address: zookeeper://127.0.0.1:2181 #10.19.248.200:29225
+    protocol: zookeeper
+    check: false
+    subscribe: true
+    timeout: 60000
+    group: dubbo
+  monitor:
+    protocol: registry
+  protocol:
+    name: dubbo
+    port: 20881
+    threadpool: fixed
+    threads: 100
+    accepts: 1000
+    charset: UTF-8
+    dispatcher: all
+    payload: 104857600
+    timeout: 60000
+    check: false
+    token: false
+  provider:
+    timeout: 60000
+    check: false
+    token: false
+  consumer:
+    timeout: 60000
+    check: false
+  service:
+    retries: 2
+    timeout: 60000
+    loadbalance: consistenthash
+  admin:
+    username: root
+    password: root
+lk:
+  storage:
+    accessKey: CDWR02D6F2Q2HNLI3MOY
+    secretKey: 2GH7bIJye6ti34zinSEiCaK7ZB1amCiv9v8m9rgj
+    endpointAddr: 10.19.248.200:30150
+    baseUrl: http://upload-image-ext.cloud.enndata.cn/common/fileDownload/
+    bucketNamePrefix: payment-center-upload
