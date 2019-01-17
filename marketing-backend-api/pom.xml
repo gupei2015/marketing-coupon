@@ -3,15 +3,15 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>lk-project</groupId>
-        <artifactId>lk-project-marketing</artifactId>
+        <groupId>coupon</groupId>
+        <artifactId>coupon-marketing</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>lk-project-marketing-backend-api</groupId>
-    <artifactId>lk-project-marketing-backend-api</artifactId>
+    <groupId>coupon-marketing-backend-api</groupId>
+    <artifactId>coupon-marketing-backend-api</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>lk-project-marketing-backend-api</name>
+    <name>coupon-marketing-backend-api</name>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -65,8 +65,8 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>lk-project-marketing-client</groupId>
-            <artifactId>lk-project-marketing-client</artifactId>
+            <groupId>coupon-marketing-client</groupId>
+            <artifactId>coupon-marketing-client</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
@@ -77,7 +77,7 @@
 
     </dependencies>
     <build>
-        <finalName>LK-market-center-backend-api</finalName>
+        <finalName>coupon-center-backend-api</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

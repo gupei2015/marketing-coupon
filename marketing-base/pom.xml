@@ -3,16 +3,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>lk-project</groupId>
-        <artifactId>lk-project-marketing</artifactId>
+        <groupId>coupon</groupId>
+        <artifactId>coupon-marketing</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>lk-project-marketing-base</groupId>
-    <artifactId>lk-project-marketing-base</artifactId>
+    <groupId>coupon-marketing-base</groupId>
+    <artifactId>coupon-marketing-base</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>lk-project-marketing-base</name>
+    <name>coupon-marketing-base</name>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.compiler.version>1.8</java.compiler.version>
@@ -66,7 +66,7 @@
         </dependency>
     </dependencies>
     <build>
-        <finalName>LK-market-center-base</finalName>
+        <finalName>coupon-center-base</finalName>
         <plugins>
             <!--compiler插件-->
             <plugin>

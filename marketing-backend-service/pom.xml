@@ -3,16 +3,16 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>lk-project</groupId>
-        <artifactId>lk-project-marketing</artifactId>
+        <groupId>coupon</groupId>
+        <artifactId>coupon-marketing</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>lk-project-marketing-backend-service</groupId>
-    <artifactId>lk-project-marketing-backend-service</artifactId>
+    <groupId>coupon-marketing-backend-service</groupId>
+    <artifactId>coupon-marketing-backend-service</artifactId>
     <packaging>jar</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>lk-project-marketing-backend-service</name>
+    <name>coupon-marketing-backend-service</name>
 
     <properties>
         <java.compiler.version>1.8</java.compiler.version>
@@ -86,13 +86,13 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>lk-project-marketing-base</groupId>
-            <artifactId>lk-project-marketing-base</artifactId>
+            <groupId>coupon-marketing-base</groupId>
+            <artifactId>coupon-marketing-base</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>lk-project-marketing-client</groupId>
-            <artifactId>lk-project-marketing-client</artifactId>
+            <groupId>coupon-marketing-client</groupId>
+            <artifactId>coupon-marketing-client</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <!--amazon存储-->
@@ -115,7 +115,7 @@
     </dependencies>
 
     <build>
-        <finalName>LK-market-center-backend-service</finalName>
+        <finalName>coupon-center-backend-service</finalName>
         <plugins>
             <!--compiler插件-->
             <plugin>

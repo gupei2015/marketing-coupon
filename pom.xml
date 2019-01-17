@@ -3,18 +3,18 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>lk-project</groupId>
-    <artifactId>lk-project-marketing</artifactId>
+    <groupId>coupon</groupId>
+    <artifactId>coupon-marketing</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>lk-project-marketing-base</module>
-        <module>lk-project-marketing-service</module>
-        <module>lk-project-marketing-api</module>
-        <module>lk-project-marketing-client</module>
-        <module>lk-project-marketing-rds</module>
-        <module>lk-project-marketing-backend-service</module>
-        <module>lk-project-marketing-backend-api</module>
+        <module>marketing-base</module>
+        <module>marketing-service</module>
+        <module>marketing-api</module>
+        <module>marketing-client</module>
+        <module>marketing-rds</module>
+        <module>marketing-backend-service</module>
+        <module>marketing-backend-api</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -107,7 +107,7 @@
         </dependency>
     </dependencies>
     <build>
-        <finalName>lk-project-marketing</finalName>
+        <finalName>coupon-marketing-service</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

@@ -3,18 +3,18 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<parent>
-        <groupId>lk-project</groupId>
-        <artifactId>lk-project-marketing</artifactId>
+        <groupId>coupon</groupId>
+        <artifactId>coupon-marketing</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 	
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>lk-project-marketing-rds</groupId>
-	<artifactId>lk-project-marketing-rds</artifactId>
+	<groupId>coupon-marketing-rds</groupId>
+	<artifactId>coupon-marketing-rds</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>lk-project-marketing-rds</name>
+	<name>coupon-marketing-rds</name>
 	<description>Marketing DB migration</description>
 
 	<dependencies>
